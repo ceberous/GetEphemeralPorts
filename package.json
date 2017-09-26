@@ -1,5 +1,5 @@
 {
-  "name": "ephemeralport",
+  "name": "getephemeralports",
   "version": "1.0.0",
   "description": "runs 'ss -lntu' command and returns json results",
   "main": "main.js",
