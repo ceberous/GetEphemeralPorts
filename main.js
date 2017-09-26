@@ -1,6 +1,6 @@
 require("shelljs/global");
-module.exports = function wEXEC( wFN ) {
-	if ( !wFN ) { return; }
+module.exports = function( wFN ) {
+	wFN = wFN || "ss -lntu";
 	var r1 = exec( wFN , { silent: true , async: false } );
 	if ( r1.stderr.length > 1 ) { return r1.stderr; }
 	r1 = r1.stdout.split("\n");
