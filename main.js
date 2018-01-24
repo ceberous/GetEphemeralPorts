@@ -5,10 +5,10 @@ module.exports = function( wFN ) {
 	if ( r1.stderr.length > 1 ) { return r1.stderr; }
 	r1 = r1.stdout.split("\n");
 	if ( r1[0].split(" ")[0].trim() !== "Netid" ) { return "'ss' command error"; }
-	var op = { udp: [] , tcp: [] };
+	var op = { udp: [] , tcp: [] , all_open: [] };
 	for ( var i = 1; i < r1.length; ++i ) {
 		if ( !r1[i] ) { continue; }
-		var x1 = r1[i].split(" ").filter(function(n){ return n != '' });
+		var x1 = r1[i].split(" ").filter( function( n ) { return n != '' } );
 		var la = x1[4].split(":");
 		var lp = la.pop();
 		la = la.join("");
@@ -22,6 +22,7 @@ module.exports = function( wFN ) {
 			peerAddr: pa ,
 			peerPort: pp ,
 		});
+		if ( op[ "all_open" ].indexOf( lp ) === -1 ) { op[ "all_open" ].push( lp ); }
 	}
 	return op;
 }

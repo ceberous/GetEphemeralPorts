@@ -1,12 +1,16 @@
 {
   "name": "getephemeralports",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "runs 'ss -lntu' command and returns json results",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ceberous/GetEphemeralPorts"
+  },  
   "url": "https://github.com/ceberous/GetEphemeralPorts" ,
   "license": "ISC",
   "dependencies": {
